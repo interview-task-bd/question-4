@@ -1,2 +1,2 @@
-./crud-backend/node_modules
+./crud-backend/node_modules/*
 ./crud-with-vuejs/node_modules
