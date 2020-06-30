@@ -1,18 +1,25 @@
 <template>
    <div>
-    <b-modal ref="modal" title="view">
+    <b-modal ref="modal" title="Add New Product Brand">
       <div class="d-block">
           <div class="row">
             <div class="col-12">
                <b-form>
                    <b-form-group
                     id="fieldset-1"
-                    description="Let us know your name."
+                    description="Enter your product name"
                     label="Enter your name"
-                    label-for="input-1"
+                    label-for="product-name"
                     >
-                       <b-form-input type="text" value="" placeholder="Name"/>
+                    <b-form-input id="product-name" type="text" placeholder="Name"/>
                    </b-form-group>
+
+
+                    <b-form-group id="input-group-2" label="Pareant(Optional)" label-for="input-2">
+                      <b-form-select>
+                        <b-form-select-option>Select a Parent</b-form-select-option>
+                      </b-form-select>
+                    </b-form-group>
                </b-form>
             </div>
           </div>
@@ -23,14 +30,16 @@
 
 <script>
 
-  import {BModal,BForm,BFormGroup,BFormInput} from 'bootstrap-vue';
+  import {BModal,BForm,BFormGroup,BFormInput,BFormSelect,BFormSelectOption} from 'bootstrap-vue';
   export default {
       name:"ModalComponent",
       components:{
           BModal,
           BForm,
           BFormGroup,
-          BFormInput
+          BFormInput,
+          BFormSelect,
+          BFormSelectOption
       },
         methods: {
         showModal() {

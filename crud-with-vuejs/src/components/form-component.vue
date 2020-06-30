@@ -39,11 +39,10 @@
 
 
 
-         <b-col cols="12" >
+         <b-col cols="12">
            <b-form-group>
                 <b-form-checkbox
                 id="checkbox-1"
-                v-model="status"
                 name="checkbox-1"
                 value="stockable"
                 unchecked-value="not-stockable"
@@ -61,9 +60,9 @@
             label="Product Brand"
             label-for="brand"
         >
-          <b-form-select  class="mb-3">
+          <b-form-select v-on:change="showModal" class="mb-3">
            <b-form-select-option :value="null" >Please select a brand</b-form-select-option>
-           <b-form-select-option  >Create New</b-form-select-option>
+           <b-form-select-option  value="CREATE_NEW" >Create New </b-form-select-option>
          </b-form-select>
           
            </b-form-group>
@@ -136,8 +135,8 @@
 
         <b-col col="12">
           <b-form-group class="text-right">
-            <b-button type="button" @click="showModal" class="btn-sm btn-light ml-3">Close</b-button>
-            <b-button type="submit" class="btn-sm btn-success ml-3">Save</b-button>
+            <b-button type="button"  class="btn-sm btn-light ml-3">Close</b-button>
+            <b-button type="submit"  class="btn-sm btn-success ml-3">Save</b-button>
           </b-form-group>
         </b-col>
 
@@ -199,8 +198,11 @@ export default {
     }
   },
   methods:{
-    showModal(){
-     this.$refs.modal.showModal()
+    showModal(event){
+           console.log(event)
+      if(event==='CREATE_NEW'){
+          this.$refs.modal.showModal()
+      }
     }
   }
 }

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import FromComponent from '@/components/form-component';
+import FromComponent from "@/components/form-component";
 import {BRow,BCol,BContainer} from 'bootstrap-vue';
 
 export default {
